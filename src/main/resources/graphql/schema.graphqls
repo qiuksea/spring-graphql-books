@@ -22,5 +22,18 @@ type Query {
     allBooks: [Book]
     findOne(id: ID!): Book
     authors: [Author]
+    authorById(id: ID!): Author
 }
+
+type Mutation {
+    addBook(book: BookInput): Book
+}
+
+input BookInput {
+    title: String
+    pages: Int
+    authorId: ID!
+
+}
+
 

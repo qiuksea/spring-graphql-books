@@ -9,11 +9,11 @@ import qi.danvega.books.model.Book;
 import qi.danvega.books.repository.BookRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class BookController {
 
-    @Autowired
     private final BookRepository bookRepository;
 
     public BookController(BookRepository bookRepository) {
@@ -25,12 +25,12 @@ public class BookController {
         return bookRepository.findAll();
     }
 
-    /*
+
     @QueryMapping
-    public Book findOne(@Argument Integer id) {
-        return bookRepository.findOne(id);
+    Optional<Book> findOne(@Argument Integer id) {
+        return bookRepository.findById(id);
     }
-*/
+
 
 }
 

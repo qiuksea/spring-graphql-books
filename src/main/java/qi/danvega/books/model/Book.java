@@ -27,12 +27,12 @@ public class Book {
     public Book() {
     }
 
-    public Book(Integer id, String title, Integer pages, Author author) {
-        this.id = id;
+    public Book(String title, Integer pages, Author author) {
         this.title = title;
         this.pages = pages;
         this.author = author;
     }
+
 
     public Integer getId() {
         return id;
