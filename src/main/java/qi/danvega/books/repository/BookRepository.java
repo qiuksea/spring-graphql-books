@@ -1,6 +1,7 @@
 package qi.danvega.books.repository;
 
 import jakarta.annotation.PostConstruct;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import qi.danvega.books.model.Book;
 import qi.danvega.books.model.Rating;
@@ -8,6 +9,18 @@ import qi.danvega.books.model.Rating;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
+
+public interface BookRepository extends JpaRepository<Book, Integer> {
+
+    List<Book> findByAuthorId(Integer authorId);
+
+    //List<Book> findAll();
+
+}
+
+
+/*
 @Repository
 public class BookRepository {
 
@@ -29,9 +42,18 @@ public class BookRepository {
 
     @PostConstruct
     private void init() {
+        books.add(new Book(1,"Reactive Spring", 484, authorRepository.findByName("Josh Long")));
+        books.add(new Book(2,"Spring Boot Up & Running", 328, authorRepository.findByName("Mark Heckler")));
+        books.add(new Book(3,"Hacking with Spring Boot 2.3", 392, authorRepository.findByName("Greg Turnquist")));
+    }
+
+}
+*/
+
+/*
+private void init() {
         books.add(new Book(1,"Reactive Spring", 484, Rating.FIVE_STARS, authorRepository.findByName("Josh Long")));
         books.add(new Book(2,"Spring Boot Up & Running", 328, Rating.FIVE_STARS, authorRepository.findByName("Mark Heckler")));
         books.add(new Book(3,"Hacking with Spring Boot 2.3", 392, Rating.FIVE_STARS, authorRepository.findByName("Greg Turnquist")));
     }
-
-}
+ */

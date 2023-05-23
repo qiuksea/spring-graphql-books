@@ -25,11 +25,12 @@ public class BookController {
         return bookRepository.findAll();
     }
 
+    /*
     @QueryMapping
     public Book findOne(@Argument Integer id) {
         return bookRepository.findOne(id);
     }
-
+*/
 
 }
 
