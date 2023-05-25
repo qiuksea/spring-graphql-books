@@ -2,14 +2,14 @@ type Book {
     id: ID!
     title: String
     pages: Int
-    rating: Rating
+    #rating: Rating
     author: Author
 }
 
-type Rating {
-    rating: String
-    star: String
-}
+#type Rating {
+    #rating: String
+    #star: String
+#}
 
 type Author {
     id: ID!
